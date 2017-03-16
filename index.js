@@ -117,11 +117,6 @@ var path = [
     [3, 1], [2, 1], [1, 1], [0, 1], [0, 2]
 ];
 
-var alternatePathCounter = 0;
-var alternatePath = [
-    [3, 1],[4, 1],[5,1],[6,1],[7,1],[8,1],[9,1],[10,1],[11,1],[11,2]
-];
-
 var pathway = new THREE.Mesh(
     new THREE.BoxGeometry(1, 1, 1),
     new THREE.MeshPhongMaterial({
@@ -141,25 +136,14 @@ var fire = new THREE.Mesh(
 // render exit route function
 function showPathWay() {
     scene.remove(pathway);
-    if (!fireOn) {
-        pathway.position.x = path[Math.floor(pathCounter)][0] - 6;
-        pathway.position.y = path[Math.floor(pathCounter)][1] - 2;
-        scene.add(pathway);
+    pathway.position.x = path[Math.floor(pathCounter)][0] - 6;
+    pathway.position.y = path[Math.floor(pathCounter)][1] - 2;
+    scene.add(pathway);
         
-        if (pathCounter < path.length-.1)
-            pathCounter+=.1
-        else
-            pathCounter = 0;
-    } else {
-        pathway.position.x = alternatePath[Math.floor(alternatePathCounter)][0] - 6;
-        pathway.position.y = alternatePath[Math.floor(alternatePathCounter)][1] - 2;
-        scene.add(pathway);
-        
-        if (alternatePathCounter < alternatePath.length-.1)
-            alternatePathCounter+=.1
-        else
-            alternatePathCounter = 0;
-    }
+    if (pathCounter < path.length-.1)
+        pathCounter+=.1
+    else
+        pathCounter = 0;
 }
 
 // event simulation
@@ -172,6 +156,10 @@ function simulateFire() {
         scene.add(fire);
     }
     fireOn = !fireOn;
+    pathCounter = 0;
+    alternatePathCounter = 0;
+
+    pathFind();
 }
 
 
@@ -183,6 +171,40 @@ function requestDangerBlock() {
         data: '', // or $('#myform').serializeArray()
         success: function(data) { alert(data); }
     });
+}
+
+// grid finding library from https://github.com/qiao/PathFinding.js
+// use A* algorithm for now
+function initMap() {
+    var grid = new PF.Grid(12, 4);
+    for (var i = 0; i < boundaries.length; i++) {
+        grid.setWalkableAt(boundaries[i][0], boundaries[i][1], false);
+    }
+    return grid;
+}
+
+
+
+function pathFind() {
+    grid = initMap();
+    var finder = new PF.AStarFinder();
+
+    if (fireOn) {
+        grid.setWalkableAt(1, 1, false);
+        for (var i = 0; i < exits.length; i++) {
+            console.log(i);
+            var evacuationPath = finder.findPath(rooms[0][0], rooms[0][1], exits[i][0], exits[i][1], grid);
+            if (evacuationPath.length != 0)
+                break;
+            else
+                grid = initMap();
+        }
+    } else {
+        grid.setWalkableAt(1, 1, true);
+        var evacuationPath = finder.findPath(rooms[0][0], rooms[0][1], exits[0][0], exits[0][1], grid);
+    }
+    path = evacuationPath;
+    console.log(path);
 }
 
 render();
