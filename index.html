@@ -22,7 +22,7 @@
             <a class="navbar-brand" href="#">Conext</a>
                 <div class="navbar-nav">
                     <a class="nav-item nav-link" href="#">B11 floor 4</a>
-                    <a class="nav-item nav-link" href="#">Data</a>
+                    <a class="nav-item nav-link" id="data">Data</a>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Simulation
@@ -44,6 +44,16 @@
                 $('#room-one').click( function(e) {e.preventDefault(); room_one(); return false; } );
                 $('#room-two').click( function(e) {e.preventDefault(); room_two(); return false; } );
                 $('#room-three').click( function(e) {e.preventDefault(); room_three(); return false; } );
+                $("#data").click(function() {
+                    $.ajax({
+                        url: 'http://localhost:5000/',
+                        type: 'GET',
+                        // data: '', // or $('#myform').serializeArray()
+                        success: function(data) { 
+                            alert(data); 
+                        }
+                    });
+                });
             });
         </script>
     </body>

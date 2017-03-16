@@ -163,16 +163,6 @@ function simulateFire() {
 }
 
 
-// ajax data requesting
-function requestDangerBlock() {
-    $.ajax({
-        url: 'http://localhost:5000/',
-        type: 'GET',
-        // data: '', // or $('#myform').serializeArray()
-        success: function(data) { alert(data); }
-    });
-}
-
 // grid finding library from https://github.com/qiao/PathFinding.js
 // use A* algorithm for now
 function initMap() {
