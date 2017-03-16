@@ -168,7 +168,7 @@ function requestDangerBlock() {
     $.ajax({
         url: 'http://localhost:5000/',
         type: 'GET',
-        data: '', // or $('#myform').serializeArray()
+        // data: '', // or $('#myform').serializeArray()
         success: function(data) { alert(data); }
     });
 }
