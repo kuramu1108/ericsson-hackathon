@@ -29,9 +29,9 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" id="simulate-fire">Fire</a>
-                            <a class="dropdown-item" href="#">Room 1</a>
-                            <a class="dropdown-item" href="#">Room 2</a>
-                            <a class="dropdown-item" href="#">Room 3</a>
+                            <a class="dropdown-item" id="room-one">Room 1</a>
+                            <a class="dropdown-item" id="room-two">Room 2</a>
+                            <a class="dropdown-item" id="room-three">Room 3</a>
                         </div>
                     </li>
                 </div>
@@ -41,6 +41,9 @@
         <script>
             $(function() {
                 $('#simulate-fire').click( function(e) {e.preventDefault(); simulateFire(); return false; } );
+                $('#room-one').click( function(e) {e.preventDefault(); room_one(); return false; } );
+                $('#room-two').click( function(e) {e.preventDefault(); room_two(); return false; } );
+                $('#room-three').click( function(e) {e.preventDefault(); room_three(); return false; } );
             });
         </script>
     </body>

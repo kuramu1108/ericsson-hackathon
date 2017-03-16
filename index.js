@@ -42,6 +42,7 @@ var boundaries = [
     [0, 0]
 ];
 
+var roomCounter = 0;
 var rooms = [
     [3,0],[8,0],[5, 2]
 ];
@@ -157,7 +158,6 @@ function simulateFire() {
     }
     fireOn = !fireOn;
     pathCounter = 0;
-    alternatePathCounter = 0;
 
     pathFind();
 }
@@ -188,23 +188,51 @@ function initMap() {
 function pathFind() {
     grid = initMap();
     var finder = new PF.AStarFinder();
-
+    var pathLength = 9999;
     if (fireOn) {
-        grid.setWalkableAt(1, 1, false);
         for (var i = 0; i < exits.length; i++) {
+            grid.setWalkableAt(1, 1, false);
             console.log(i);
-            var evacuationPath = finder.findPath(rooms[0][0], rooms[0][1], exits[i][0], exits[i][1], grid);
-            if (evacuationPath.length != 0)
-                break;
-            else
-                grid = initMap();
+            var evacuationPath = finder.findPath(rooms[roomCounter][0], rooms[roomCounter][1], exits[i][0], exits[i][1], grid);
+            if (evacuationPath.length != 0) {
+                if (evacuationPath.length < pathLength) {
+                    pathLength = evacuationPath.length;
+                    path = evacuationPath;
+                }
+            }
+            grid = initMap();
         }
     } else {
-        grid.setWalkableAt(1, 1, true);
-        var evacuationPath = finder.findPath(rooms[0][0], rooms[0][1], exits[0][0], exits[0][1], grid);
+        for (var i = 0; i < exits.length; i++) {
+            grid.setWalkableAt(1, 1, true);
+            var evacuationPath = finder.findPath(rooms[roomCounter][0], rooms[roomCounter][1], exits[i][0], exits[i][1], grid);
+            if (evacuationPath.length != 0) {
+                if (evacuationPath.length < pathLength) {
+                    pathLength = evacuationPath.length;
+                    path = evacuationPath;
+                }
+            }
+            grid = initMap();
+        }
     }
-    path = evacuationPath;
-    console.log(path);
+}
+
+function room_one () {
+    roomCounter = 0;
+    pathCounter = 0;
+    pathFind();
+} 
+
+function room_two() {
+    roomCounter = 1;
+    pathCounter = 0;
+    pathFind();
+}
+
+function room_three () {
+    roomCounter = 2;
+    pathCounter = 0;
+    pathFind();
 }
 
 render();
