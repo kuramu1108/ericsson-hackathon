@@ -25,6 +25,10 @@ var exits = [
     [0, 3],[11, 3]
 ];
 
+var exits_availability = [
+    true, true
+];
+
 var boundaries = [    
     [11, 0],
     [10, 0],
@@ -75,7 +79,6 @@ for (var x = 0; x < 12; x++) {
     for (var y = 0; y < 4; y++) {
             var geometry = new THREE.BoxGeometry( 1, 1, 1 );
 
-            
             if ( belongsTo(x, y, exits)) {
                 var material = new THREE.MeshPhongMaterial( {
                     color: 0x00ff00,
@@ -195,28 +198,32 @@ function pathFind() {
     var pathLength = 9999;
     if (fireOn) {
         for (var i = 0; i < exits.length; i++) {
-            grid.setWalkableAt(fires[fireCounter][0], fires[fireCounter][1], false);
-            console.log(i);
-            var evacuationPath = finder.findPath(rooms[roomCounter][0], rooms[roomCounter][1], exits[i][0], exits[i][1], grid);
-            if (evacuationPath.length != 0) {
-                if (evacuationPath.length < pathLength) {
-                    pathLength = evacuationPath.length;
-                    path = evacuationPath;
+            if (exits_availability[i]) {
+                grid.setWalkableAt(fires[fireCounter][0], fires[fireCounter][1], false);
+                console.log(i);
+                var evacuationPath = finder.findPath(rooms[roomCounter][0], rooms[roomCounter][1], exits[i][0], exits[i][1], grid);
+                if (evacuationPath.length != 0) {
+                    if (evacuationPath.length < pathLength) {
+                        pathLength = evacuationPath.length;
+                        path = evacuationPath;
+                    }
                 }
+                grid = initMap();
             }
-            grid = initMap();
         }
     } else {
         for (var i = 0; i < exits.length; i++) {
-            grid.setWalkableAt(fires[fireCounter][0], fires[fireCounter][1], true);
-            var evacuationPath = finder.findPath(rooms[roomCounter][0], rooms[roomCounter][1], exits[i][0], exits[i][1], grid);
-            if (evacuationPath.length != 0) {
-                if (evacuationPath.length < pathLength) {
-                    pathLength = evacuationPath.length;
-                    path = evacuationPath;
+            if (exits_availability[i]) {
+                grid.setWalkableAt(fires[fireCounter][0], fires[fireCounter][1], true);
+                var evacuationPath = finder.findPath(rooms[roomCounter][0], rooms[roomCounter][1], exits[i][0], exits[i][1], grid);
+                if (evacuationPath.length != 0) {
+                    if (evacuationPath.length < pathLength) {
+                        pathLength = evacuationPath.length;
+                        path = evacuationPath;
+                    }
                 }
+                grid = initMap();
             }
-            grid = initMap();
         }
     }
 }
@@ -239,8 +246,25 @@ function room_three () {
     pathFind();
 }
 
+var congestedExit = new THREE.Mesh(
+    new THREE.BoxGeometry(1, 1, 1),
+    new THREE.MeshPhongMaterial({
+        color: 0x9E0298,
+    })
+);
+
 function congested() {
-    
+     if (!exits_availability[0]) {
+        scene.remove(congestedExit);
+        exits_availability[0] = true;
+    } else {
+        exits_availability[0] = false;
+        congestedExit.position.x = exits[0][0] - 6;
+        congestedExit.position.y = exits[0][1] - 2;
+        scene.add(congestedExit);
+    }
+    pathCounter = 0;
+    pathFind();
 }
 
 render();
