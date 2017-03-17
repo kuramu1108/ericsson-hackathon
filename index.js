@@ -1,14 +1,12 @@
 var scene = new THREE.Scene();
-var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / (window.innerHeight * .7), 0.1, 1000 );
 
 var renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth, window.innerHeight* .8 );
+renderer.setSize( window.innerWidth, window.innerHeight* .7 );
 document.body.appendChild( renderer.domElement );
 
 var orbit = new THREE.OrbitControls( camera, render.domElement);
 orbit.enableZoom = false;
-
-var fired_areas = [];
 
 var lights = [];
 lights[ 0 ] = new THREE.PointLight( 0xffffff, 1, 0 );
@@ -45,6 +43,11 @@ var boundaries = [
 var roomCounter = 0;
 var rooms = [
     [3,0],[8,0],[5, 2]
+];
+
+var fireCounter = 0;
+var fires = [
+    [1, 1], [4, 1]
 ];
 
 function belongsTo(x, y, arr) {
@@ -148,12 +151,23 @@ function showPathWay() {
 }
 
 // event simulation
+function fire_one() {
+    fireCounter = 0;
+    simulateFire();
+}
+
+function fire_two() {
+    fireCounter = 1;
+    simulateFire();
+}
+
+
 function simulateFire() {
     if (fireOn) {
         scene.remove(fire);
     } else {
-        fire.position.x = 1 - 6;
-        fire.position.y = 1 - 2;
+        fire.position.x = fires[fireCounter][0] - 6;
+        fire.position.y = fires[fireCounter][1] - 2;
         scene.add(fire);
     }
     fireOn = !fireOn;
@@ -181,7 +195,7 @@ function pathFind() {
     var pathLength = 9999;
     if (fireOn) {
         for (var i = 0; i < exits.length; i++) {
-            grid.setWalkableAt(1, 1, false);
+            grid.setWalkableAt(fires[fireCounter][0], fires[fireCounter][1], false);
             console.log(i);
             var evacuationPath = finder.findPath(rooms[roomCounter][0], rooms[roomCounter][1], exits[i][0], exits[i][1], grid);
             if (evacuationPath.length != 0) {
@@ -194,7 +208,7 @@ function pathFind() {
         }
     } else {
         for (var i = 0; i < exits.length; i++) {
-            grid.setWalkableAt(1, 1, true);
+            grid.setWalkableAt(fires[fireCounter][0], fires[fireCounter][1], true);
             var evacuationPath = finder.findPath(rooms[roomCounter][0], rooms[roomCounter][1], exits[i][0], exits[i][1], grid);
             if (evacuationPath.length != 0) {
                 if (evacuationPath.length < pathLength) {
