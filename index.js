@@ -109,7 +109,7 @@ for (var x = 0; x < 12; x++) {
     }
 }
 
-camera.position.z = 15;
+camera.position.z = 8;
 
 function render() {
     showPathWay();
