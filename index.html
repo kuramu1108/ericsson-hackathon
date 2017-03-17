@@ -46,7 +46,7 @@
                 $('#room-three').click( function(e) {e.preventDefault(); room_three(); return false; } );
                 $("#data").click(function() {
                     $.ajax({
-                        url: 'http://localhost:5000/',
+                        url: 'https://ericsson-hackathon.herokuapp.com/hackathon',
                         type: 'GET',
                         // data: '', // or $('#myform').serializeArray()
                         success: function(data) { 
