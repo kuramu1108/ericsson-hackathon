@@ -1,0 +1,31 @@
+UTS Building 11 People Counting Camera Streams
+
+!! Only accessible from UTS WPA !!
+
+http://hummingbird.feit.uts.edu.au:8080/mjpeg/streams/PCB101-LevelB1CenterPCLabs1.mjpg?pw=3dkJVVFdCfWKACyR
+http://hummingbird.feit.uts.edu.au:8080/mjpeg/streams/PCB102-LevelB1WesternPCLabs1.mjpg?pw=Fw3XxLcvhy2rPNFT
+http://hummingbird.feit.uts.edu.au:8080/mjpeg/streams/PC0005-WattleStreetWest1.mjpg?pw=28wfVCB4VyDMLUec
+http://hummingbird.feit.uts.edu.au:8080/mjpeg/streams/PC0006-WattleStreetWest2.mjpg?pw=6YBh8syc9pKhtYKn
+http://hummingbird.feit.uts.edu.au:8080/mjpeg/streams/PC0007-WattleStB10Entrance.mjpg?pw=pbChRu5QZ8dffukC
+http://hummingbird.feit.uts.edu.au:8080/mjpeg/streams/PC0008-BroadwayWest2Stairs.mjpg?pw=Bawrt6yrJ277PnB6
+http://hummingbird.feit.uts.edu.au:8080/mjpeg/streams/PC0009-BroadwayWest1.mjpg?pw=2mj2fvavx6F7WjEU
+http://hummingbird.feit.uts.edu.au:8080/mjpeg/streams/PC0111-CafeWest.mjpg?pw=3BJVv9e5YeuNVv3s
+http://hummingbird.feit.uts.edu.au:8080/mjpeg/streams/PC0112-StairsToLevel2.mjpg?pw=Z8wTWZv7DkbTmfTX
+http://hummingbird.feit.uts.edu.au:8080/mjpeg/streams/PC0113-PennyLaneExit.mjpg?pw=uZrHuCZ58THtD3QR
+http://hummingbird.feit.uts.edu.au:8080/mjpeg/streams/PC0214-BroadwayEastEntrance.mjpg?pw=2ZWTpV3HJZAfTTkv
+http://hummingbird.feit.uts.edu.au:8080/mjpeg/streams/PC0215-DataArena.mjpg?pw=fhQuRB9dmQnGEg2M
+http://hummingbird.feit.uts.edu.au:8080/mjpeg/streams/PC0216-JonesStEntrance.mjpg?pw=q5NTNu7kncMTEYrv
+http://hummingbird.feit.uts.edu.au:8080/mjpeg/streams/PC0420-Classroom400.mjpg?pw=wHZ8YvxKzBHY5UKZ
+http://hummingbird.feit.uts.edu.au:8080/mjpeg/streams/PC0522-Level5StairsDown.mjpg?pw=eufgZw9ndTQ2m6MM
+http://hummingbird.feit.uts.edu.au:8080/mjpeg/streams/PC0523-Classroom200.mjpg?pw=4zHM53PdWBVywmnK
+http://hummingbird.feit.uts.edu.au:8080/mjpeg/streams/PC0825-CHTArea.mjpg?pw=es2kM2uk7UJHVKRC
+http://hummingbird.feit.uts.edu.au:8080/mjpeg/streams/PC0926-CassArea.mjpg?pw=5qW4pfRTcSZgek8B
+http://hummingbird.feit.uts.edu.au:8080/mjpeg/streams/PC0927-Level9StairsUp.mjpg?pw=XJfX4ha2p2a299ff
+http://hummingbird.feit.uts.edu.au:8080/mjpeg/streams/PC0928-Level9StairsDown.mjpg?pw=2LVbfZDLpqchsPyK
+http://hummingbird.feit.uts.edu.au:8080/mjpeg/streams/PC0929-StaffCommonRoom.mjpg?pw=kPcvYCAvb3Pzjt9E
+http://hummingbird.feit.uts.edu.au:8080/mjpeg/streams/PC1030-Level10BridgeEast.mjpg?pw=4T6AA4JxBq6TQutf
+http://hummingbird.feit.uts.edu.au:8080/mjpeg/streams/PC1131-Level11BridgeEast.mjpg?pw=zHgxtt8vNHjEdMNk
+http://hummingbird.feit.uts.edu.au:8080/mjpeg/streams/PC1132-SchoolOfCivil.mjpg?pw=FxDayucfmAQYAT2u
+http://hummingbird.feit.uts.edu.au:8080/mjpeg/streams/PC1133-Level11StairsUp.mjpg?pw=F5y7fHnjAbL2vW57
+http://hummingbird.feit.uts.edu.au:8080/mjpeg/streams/C1303-VAWT.mjpg?pw=NX90X216aw3Ah4PG
+http://hummingbird.feit.uts.edu.au:8080/mjpeg/streams/C1302-SolarPanelSTC.mjpg?pw=FBBAB6C2DC8A6156

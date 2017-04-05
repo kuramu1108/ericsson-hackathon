@@ -1,0 +1,29 @@
+UTS Building 11 Live People Counting API
+
+!! Only accessible from UTS WPA !!
+
+http://hummingbird.feit.uts.edu.au:8080/peopleCounterApi/live/PCB101-LevelB1CenterPCLabs1
+http://hummingbird.feit.uts.edu.au:8080/peopleCounterApi/live/PCB102-LevelB1WesternPCLabs1
+http://hummingbird.feit.uts.edu.au:8080/peopleCounterApi/live/PC0005-WattleStreetWest1
+http://hummingbird.feit.uts.edu.au:8080/peopleCounterApi/live/PC0006-WattleStreetWest2
+http://hummingbird.feit.uts.edu.au:8080/peopleCounterApi/live/PC0007-WattleStB10Entrance
+http://hummingbird.feit.uts.edu.au:8080/peopleCounterApi/live/PC0008-BroadwayWest2Stairs
+http://hummingbird.feit.uts.edu.au:8080/peopleCounterApi/live/PC0009-BroadwayWest1
+http://hummingbird.feit.uts.edu.au:8080/peopleCounterApi/live/PC0111-CafeWest
+http://hummingbird.feit.uts.edu.au:8080/peopleCounterApi/live/PC0112-StairsToLevel2
+http://hummingbird.feit.uts.edu.au:8080/peopleCounterApi/live/PC0113-PennyLaneExit
+http://hummingbird.feit.uts.edu.au:8080/peopleCounterApi/live/PC0214-BroadwayEastEntrance
+http://hummingbird.feit.uts.edu.au:8080/peopleCounterApi/live/PC0215-DataArena
+http://hummingbird.feit.uts.edu.au:8080/peopleCounterApi/live/PC0216-JonesStEntrance
+http://hummingbird.feit.uts.edu.au:8080/peopleCounterApi/live/PC0420-Classroom400
+http://hummingbird.feit.uts.edu.au:8080/peopleCounterApi/live/PC0522-Level5StairsDown
+http://hummingbird.feit.uts.edu.au:8080/peopleCounterApi/live/PC0523-Classroom200
+http://hummingbird.feit.uts.edu.au:8080/peopleCounterApi/live/PC0825-CHTArea
+http://hummingbird.feit.uts.edu.au:8080/peopleCounterApi/live/PC0926-CassArea
+http://hummingbird.feit.uts.edu.au:8080/peopleCounterApi/live/PC0927-Level9StairsUp
+http://hummingbird.feit.uts.edu.au:8080/peopleCounterApi/live/PC0928-Level9StairsDown
+http://hummingbird.feit.uts.edu.au:8080/peopleCounterApi/live/PC0929-StaffCommonRoom
+http://hummingbird.feit.uts.edu.au:8080/peopleCounterApi/live/PC1030-Level10BridgeEast
+http://hummingbird.feit.uts.edu.au:8080/peopleCounterApi/live/PC1131-Level11BridgeEast
+http://hummingbird.feit.uts.edu.au:8080/peopleCounterApi/live/PC1132-SchoolOfCivil
+http://hummingbird.feit.uts.edu.au:8080/peopleCounterApi/live/PC1133-Level11StairsUp
